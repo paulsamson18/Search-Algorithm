@@ -1,50 +1,78 @@
-# Linear Search and Binary search
+
+# Selection sort and Insertion sort
 ## Aim:
-To write a program to perform linear search and binary search using python programming.
+To write a program to perform selection sort and insertion sort using python programming.
 ## Equipment’s required:
 1.	Hardware – PCs
 2.	Anaconda – Python 3.7 Installation / Moodle-Code Runner
 ## Algorithm:
-## Linear Search:
-1.	Start from the leftmost element of array[] and compare k with each element of array[] one by one.
-2.	If k matches with an element in array[] , return the index.
-3.	If k doesn’t match with any of elements in array[], return -1 or element not found.
-## Binary Search:
-1.	Set two pointers low and high at the lowest and the highest positions respectively.
-2.	Find the middle element mid of the array ie. arr[(low + high)/2]
-3.	If x == mid, then return mid.Else, compare the element to be searched with m.
-4.	If x > mid, compare x with the middle element of the elements on the right side of mid. This is done by setting low to low = mid + 1.
-5.	Else, compare x with the middle element of the elements on the left side of mid. This is done by setting high to high = mid - 1.
-6.	Repeat steps 2 to 5 until low meets high
+## Selection Sort Algorithm:
+1.	Set the first unsorted element as the minimum
+2.	For each of the unsorted elements, check if the element < current minimum.
+3.	If yes, set the element as the new minimum.
+4.	Swap minimum with first unsorted position.
+5.	Repeat the steps 2 and 3 for all the elements in the array.
+## Insertion Sort Algorithm:
+1.	Set the first element as sorted element j.
+2.	For each unsorted element X, check if current sorted element j >X.
+3.	If yes, move sorted element to the right by 1.
+4.	Break the loop and insert X.
+5.	Repeat the steps 2 to 4 for sorting all the elements in the array.
 ## Program:
-i)	#Use a linear search method to match the item in a list.
+i)	#Selection Sort
+```
+''' 
+Program to sort the elements in the list using the Selection Sort algorithm.
+Developed by: paulsamson
+RegisterNumber: 212222230104
+'''
+def selection_sort(nums):
+   for i in range(len(nums)):
+       low=i
+       for j in range(i+1,len(nums)):
+           if nums[j]<nums[low]:
+               low=j
+       nums[i],nums[low]=nums[low],nums[i]
+   print(nums)
+list_of_nums = eval(input())
+selection_sort(list_of_nums)
+
+
+
+
+```
+ii)	#Insertion Sort
+```
+''' 
+Program to sort the elements in the list using the Insertion Sort algorithm.
+Developed by: paulsamson
+RegisterNumber: 212222230104
+'''
+def insertion_sort(nums):
+    for i in range(1,len(nums)):
+        insert=nums[i]
+        j=i-1
+        while j>=0 and nums[j]>insert:
+            nums[j+1]=nums[j]
+            j-=1
+        nums[j+1]=insert
+    print(nums)
+list_of_nums = eval(input())
+insertion_sort(list_of_nums)
+# use the insertion sort function to get the sorted list
+# print the sorted list
+
+
+
+
+
 ```
 
-
-
-```
-ii)	# Find the element in a list using Binary Search(Iterative Method).
-```
-
+## Output:
+![image](https://github.com/Dhiyanesh24/Sorting-Algorithm/assets/118362288/13780a24-a767-4a59-83c4-4abeb99bd01d)
+![image](https://github.com/Dhiyanesh24/Sorting-Algorithm/assets/118362288/6c3b53f9-a5d3-4bae-9881-2d8ea5999f44)
 
 
 
-
-```
-iii)	# Find the element in a list using Binary Search (recursive Method).
-```
-
-
-
-
-
-```
-## Sample Input and Output
-
-
-
-
-
-
-## Result
-Thus the linear search and binary search algorithm is implemented using python programming.
+## Result:
+Thus the program is written to perform selection sort and insertion sort using python programming.
